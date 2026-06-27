@@ -101,19 +101,18 @@ Wazuh's File Integrity Monitoring (FIM) module monitors critical files and direc
 
 ## Detection Results
 
-### Wazuh Alert
-Wazuh fired immediately upon detecting the `authorized_keys` file modification:
+### Splunk Evidence — authorized_keys Modified
+![Splunk FIM Detection](screenshots/splunk-fim-detection.png)
 
-- **Rule:** Integrity checksum changed
-- **File:** `/home/cyberintelhq/.ssh/authorized_keys`
-- **Agent:** SOC101-ubuntu
-- **Time:** 2026-06-27 15:23:40
+### Splunk Dashboard — High Severity Alerts
+![Splunk Dashboard](screenshots/splunk-dashboard-alerts.png)
 
-### Splunk Query (Evidence)
-```splunk
+### Wazuh Syscheck Configuration
+![Wazuh Config](screenshots/wazuh-syscheck-config.png)
 index=wazuh sourcetype=wazuh-alerts earliest=-24h
 | search syscheck.path="*authorized*" OR syscheck.path="*ssh*"
 | table _time, agent.name, syscheck.path, rule.description
+
 ```
 
 ### Splunk Result
