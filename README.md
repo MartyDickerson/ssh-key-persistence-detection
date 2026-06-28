@@ -122,8 +122,6 @@ index=wazuh sourcetype=wazuh-alerts earliest=-24h
 |---|---|---|---|
 | 2026-06-27 15:23:40 | SOC101-ubuntu | /home/cyberintelhq/.ssh/authorized_keys | Integrity checksum changed |
 
-📸 See `/screenshots/splunk-fim-detection.png`
-
 ---
 
 ## Key Lessons Learned
