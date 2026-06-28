@@ -117,8 +117,6 @@ index=wazuh sourcetype=wazuh-alerts earliest=-24h
 | table _time, agent.name, syscheck.path, rule.description
 ```
 
-```
-
 ### Splunk Result
 | Time | Agent | Path | Description |
 |---|---|---|---|
