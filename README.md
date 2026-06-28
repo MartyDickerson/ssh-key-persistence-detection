@@ -110,9 +110,12 @@ Wazuh's File Integrity Monitoring (FIM) module monitors critical files and direc
 ### Wazuh Syscheck Configuration
 ![Wazuh Config](screenshots/wazuh-syscheck-config.png)
 
+### Splunk Detection Query
+```splunk
 index=wazuh sourcetype=wazuh-alerts earliest=-24h
 | search syscheck.path="*authorized*" OR syscheck.path="*ssh*"
 | table _time, agent.name, syscheck.path, rule.description
+```
 
 ```
 
